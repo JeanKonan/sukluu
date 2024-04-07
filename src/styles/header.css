@@ -1,0 +1,6 @@
+header#header {
+    display: flex;
+    flex-direction: column;
+    width: 84px;
+    height: 100%;
+}
