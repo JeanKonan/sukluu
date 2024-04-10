@@ -1,0 +1,490 @@
+{
+    "courses": [
+        {
+            "name": "French",
+            "code": "FRN101",
+            "image": "french.jpg",
+            "assignments": [
+            {
+                "name": "Comprehension Exercise",
+                "deadline": "2024-04-15",
+                "time_limit": "1 hour",
+                "total_points": 50,
+                "attempts_allowed": 2,
+                "questions": [
+                {
+                    "content": "What is the capital of France?",
+                    "answer_options": ["Paris", "London", "Berlin", "Madrid"],
+                    "correct_answer": "Paris"
+                },
+                {
+                    "content": "Translate 'Bonjour' to English.",
+                    "answer_options": ["Goodbye", "Hello", "Thank you", "Please"],
+                    "correct_answer": "Hello"
+                },
+                {
+                    "content": "Who wrote 'Les Misérables'?",
+                    "answer_options": ["Victor Hugo", "Gustave Flaubert", "Émile Zola", "Albert Camus"],
+                    "correct_answer": "Victor Hugo"
+                },
+                {
+                    "content": "What is the official language of France?",
+                    "answer_options": ["French", "English", "German", "Spanish"],
+                    "correct_answer": "French"
+                },
+                {
+                    "content": "What is the French word for 'cat'?",
+                    "answer_options": ["Chat", "Chien", "Cheval", "Cochon"],
+                    "correct_answer": "Chat"
+                }
+                ]
+            },
+            {
+                "name": "Conjugation Exercise",
+                "deadline": "2024-04-24",
+                "time_limit": "30 minutes",
+                "total_points": 45,
+                "attempts_allowed": 2,
+                "questions": [
+                {
+                    "content": "What is the capital of France?",
+                    "answer_options": ["Paris", "London", "Berlin", "Madrid"],
+                    "correct_answer": "Paris"
+                },
+                {
+                    "content": "Translate 'Bonjour' to English.",
+                    "answer_options": ["Goodbye", "Hello", "Thank you", "Please"],
+                    "correct_answer": "Hello"
+                },
+                {
+                    "content": "Who wrote 'Les Misérables'?",
+                    "answer_options": ["Victor Hugo", "Gustave Flaubert", "Émile Zola", "Albert Camus"],
+                    "correct_answer": "Victor Hugo"
+                },
+                {
+                    "content": "What is the official language of France?",
+                    "answer_options": ["French", "English", "German", "Spanish"],
+                    "correct_answer": "French"
+                },
+                {
+                    "content": "What is the French word for 'cat'?",
+                    "answer_options": ["Chat", "Chien", "Cheval", "Cochon"],
+                    "correct_answer": "Chat"
+                }
+                ]
+            }
+            ]
+        },
+        {
+            "name": "Mathematics",
+            "code": "MTH101",
+            "image": "math.jpg",
+            "assignments": [
+            {
+                "name": "Algebra Quiz",
+                "deadline": "2024-04-20",
+                "time_limit": "45 minutes",
+                "total_points": 40,
+                "attempts_allowed": 1,
+                "questions": [
+                {
+                    "content": "Solve for x: 2x + 5 = 15",
+                    "answer_options": ["2", "5", "10", "15"],
+                    "correct_answer": "5"
+                },
+                {
+                    "content": "What is the square root of 81?",
+                    "answer_options": ["7", "8", "9", "10"],
+                    "correct_answer": "9"
+                },
+                {
+                    "content": "What is the value of π (pi) to 2 decimal places?",
+                    "answer_options": ["3.12", "3.14", "3.16", "3.18"],
+                    "correct_answer": "3.14"
+                },
+                {
+                    "content": "What is the sum of the angles in a triangle?",
+                    "answer_options": ["90 degrees", "180 degrees", "270 degrees", "360 degrees"],
+                    "correct_answer": "180 degrees"
+                },
+                {
+                    "content": "What is the next number in the sequence: 1, 4, 9, 16, ...?",
+                    "answer_options": ["25", "30", "36", "49"],
+                    "correct_answer": "25"
+                }
+                ]
+            }
+            ]
+        },
+        {
+        "name": "History and Geography",
+        "code": "HISGEO101",
+        "image": "hgeo.jpg",
+        "assignments": [
+            {
+            "name": "World History Quiz",
+            "deadline": "2024-04-18",
+            "time_limit": "50 minutes",
+            "total_points": 60,
+            "attempts_allowed": 1,
+            "questions": [
+                {
+                "content": "Who was the first president of the United States?",
+                "answer_options": ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "John Adams"],
+                "correct_answer": "George Washington"
+                },
+                {
+                "content": "Which ancient civilization built the pyramids?",
+                "answer_options": ["Greek", "Roman", "Egyptian", "Mesopotamian"],
+                "correct_answer": "Egyptian"
+                },
+                {
+                "content": "Who was the founder of Buddhism?",
+                "answer_options": ["Siddhartha Gautama", "Confucius", "Laozi", "Muhammad"],
+                "correct_answer": "Siddhartha Gautama"
+                },
+                {
+                "content": "What was the capital of the Byzantine Empire?",
+                "answer_options": ["Athens", "Rome", "Constantinople", "Alexandria"],
+                "correct_answer": "Constantinople"
+                },
+                {
+                "content": "Which European explorer reached India by sea in 1498?",
+                "answer_options": ["Christopher Columbus", "Ferdinand Magellan", "Vasco da Gama", "James Cook"],
+                "correct_answer": "Vasco da Gama"
+                }
+            ]
+            }
+        ]
+        },
+        {
+        "name": "Moral and Civil Education",
+        "code": "MCE101",
+        "image": "ecm.jpg",
+        "assignments": [
+            {
+            "name": "Ethical Dilemmas",
+            "deadline": "2024-04-22",
+            "time_limit": "1 hour",
+            "total_points": 70,
+            "attempts_allowed": 2,
+            "questions": [
+                {
+                "content": "Is it ever justified to tell a lie?",
+                "answer_options": ["Yes", "No"],
+                "correct_answer": "It depends on the situation"
+                },
+                {
+                "content": "What is the golden rule?",
+                "answer_options": ["Treat others as you want to be treated", "Do unto others as you would have them do unto you"],
+                "correct_answer": "Treat others as you want to be treated"
+                },
+                {
+                "content": "What is the concept of 'civil disobedience'?",
+                "answer_options": ["Breaking the law for personal gain", "Resisting unjust laws peacefully", "Rebellion against the government"],
+                "correct_answer": "Resisting unjust laws peacefully"
+                },
+                {
+                "content": "What is the importance of empathy in society?",
+                "answer_options": ["It fosters understanding and compassion", "It is irrelevant in modern society", "It leads to weakness"],
+                "correct_answer": "It fosters understanding and compassion"
+                },
+                {
+                "content": "Why is respecting diversity important?",
+                "answer_options": ["It promotes inclusivity and tolerance", "It leads to division and conflict"],
+                "correct_answer": "It promotes inclusivity and tolerance"
+                }
+            ]
+            }
+        ]
+        },
+        {
+        "name": "Languages",
+        "code": "LAN101",
+        "image": "languages.jpg",
+        "assignments": [
+            {
+            "name": "Vocabulary Test",
+            "deadline": "2024-04-25",
+            "time_limit": "40 minutes",
+            "total_points": 50,
+            "attempts_allowed": 1,
+            "questions": [
+                {
+                "content": "Translate 'book' to Spanish.",
+                "answer_options": ["Libro", "Casa", "Perro", "Agua"],
+                "correct_answer": "Libro"
+                },
+                {
+                "content": "What is the German word for 'hello'?",
+                "answer_options": ["Hallo", "Guten Tag", "Auf Wiedersehen", "Danke"],
+                "correct_answer": "Hallo"
+                },
+                {
+                "content": "What does 'merci' mean in English?",
+                "answer_options": ["Hello", "Thank you", "Goodbye", "Please"],
+                "correct_answer": "Thank you"
+                },
+                {
+                "content": "Translate 'house' to French.",
+                "answer_options": ["Maison", "Voiture", "Chien", "Chat"],
+                "correct_answer": "Maison"
+                },
+                {
+                "content": "What is the Italian word for 'friend'?",
+                "answer_options": ["Amico", "Casa", "Cibo", "Grazie"],
+                "correct_answer": "Amico"
+                }
+            ]
+            }
+        ]
+        },
+        {
+        "name": "Sciences",
+        "code": "SCI101",
+        "image": "sciences.jpg",
+        "assignments": [
+            {
+            "name": "Biology Quiz",
+            "deadline": "2024-04-28",
+            "time_limit": "50 minutes",
+            "total_points": 60,
+            "attempts_allowed": 1,
+            "questions": [
+                {
+                "content": "What is the powerhouse of the cell?",
+                "answer_options": ["Nucleus", "Mitochondria", "Golgi apparatus", "Endoplasmic reticulum"],
+                "correct_answer": "Mitochondria"
+                },
+                {
+                "content": "What is the process by which plants make their own food?",
+                "answer_options": ["Photosynthesis", "Respiration", "Fermentation", "Digestion"],
+                "correct_answer": "Photosynthesis"
+                },
+                {
+                "content": "What is the largest organ in the human body?",
+                "answer_options": ["Heart", "Liver", "Skin", "Brain"],
+                "correct_answer": "Skin"
+                },
+                {
+                "content": "What is the chemical symbol for water?",
+                "answer_options": ["H2O", "CO2", "NaCl", "O2"],
+                "correct_answer": "H2O"
+                },
+                {
+                "content": "Which gas do plants release during photosynthesis?",
+                "answer_options": ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
+                "correct_answer": "Oxygen"
+                }
+            ]
+            }
+        ]
+        },
+        {
+        "name": "Physics and Chemistry",
+        "code": "PHYCHEM101",
+        "image": "ph.jpg",
+        "assignments": [
+            {
+            "name": "Physics Experiment",
+            "deadline": "2024-04-30",
+            "time_limit": "1 hour",
+            "total_points": 70,
+            "attempts_allowed": 2,
+            "questions": [
+                {
+                "content": "What is Newton's first law of motion?",
+                "answer_options": ["An object in motion stays in motion unless acted upon by an external force", "Force equals mass times acceleration", "For every action, there is an equal and opposite reaction"],
+                "correct_answer": "An object in motion stays in motion unless acted upon by an external force"
+                },
+                {
+                "content": "What is the SI unit of force?",
+                "answer_options": ["Newton", "Pascal", "Joule", "Watt"],
+                "correct_answer": "Newton"
+                },
+                {
+                "content": "What is the chemical symbol for gold?",
+                "answer_options": ["Au", "Ag", "Fe", "Cu"],
+                "correct_answer": "Au"
+                },
+                {
+                "content": "What is the atomic number of carbon?",
+                "answer_options": ["6", "8", "12", "14"],
+                "correct_answer": "6"
+                },
+                {
+                "content": "What is the formula for calculating density?",
+                "answer_options": ["Density = Mass × Volume", "Density = Volume / Mass", "Density = Mass - Volume", "Density = Mass + Volume"],
+                "correct_answer": "Density = Mass / Volume"
+                }
+            ]
+            }
+        ]
+        },
+        {
+        "name": "Technology",
+        "code": "TECH101",
+        "image": "tech.jpg",
+        "assignments": [
+            {
+            "name": "Coding Challenge",
+            "deadline": "2024-05-02",
+            "time_limit": "2 hours",
+            "total_points": 80,
+            "attempts_allowed": 1,
+            "questions": [
+                {
+                "content": "What does HTML stand for?",
+                "answer_options": ["Hypertext Markup Language", "Hyperlink and Text Markup Language", "Home Tool Markup Language", "Hyper Tool Markup Language"],
+                "correct_answer": "Hypertext Markup Language"
+                },
+                {
+                "content": "Which programming language is used for styling web pages?",
+                "answer_options": ["JavaScript", "Python", "CSS", "Java"],
+                "correct_answer": "CSS"
+                },
+                {
+                "content": "What is the primary function of a firewall?",
+                "answer_options": ["Prevent unauthorized access", "Boost computer performance", "Control internet speed", "Block pop-up ads"],
+                "correct_answer": "Prevent unauthorized access"
+                },
+                {
+                "content": "What does 'URL' stand for?",
+                "answer_options": ["Uniform Resource Locator", "Universal Resource Language", "Unique Reference Link", "Universal Routing Language"],
+                "correct_answer": "Uniform Resource Locator"
+                },
+                {
+                "content": "Which programming language is commonly used for building Android apps?",
+                "answer_options": ["Swift", "C++", "Java", "Ruby"],
+                "correct_answer": "Java"
+                }
+            ]
+            }
+        ]
+        },
+        {
+        "name": "Sports",
+        "code": "SPORT101",
+        "image": "sports.jpg",
+        "assignments": [
+            {
+            "name": "Fitness Challenge",
+            "deadline": "2024-05-05",
+            "time_limit": "2 hours",
+            "total_points": 90,
+            "attempts_allowed": 2,
+            "questions": [
+                {
+                "content": "What is the purpose of stretching before exercise?",
+                "answer_options": ["To increase flexibility", "To build muscle", "To decrease heart rate", "To improve balance"],
+                "correct_answer": "To increase flexibility"
+                },
+                {
+                "content": "Which muscle group is targeted by squats?",
+                "answer_options": ["Biceps", "Quadriceps", "Hamstrings", "Triceps"],
+                "correct_answer": "Quadriceps"
+                },
+                {
+                "content": "What is the average resting heart rate for adults?",
+                "answer_options": ["50-70 beats per minute", "80-100 beats per minute", "120-150 beats per minute", "180-200 beats per minute"],
+                "correct_answer": "50-70 beats per minute"
+                },
+                {
+                "content": "What is the main benefit of cardiovascular exercise?",
+                "answer_options": ["Improves heart health", "Builds muscle strength", "Increases bone density", "Boosts metabolism"],
+                "correct_answer": "Improves heart health"
+                },
+                {
+                "content": "Which sport involves a shuttlecock?",
+                "answer_options": ["Badminton", "Tennis", "Basketball", "Soccer"],
+                "correct_answer": "Badminton"
+                }
+            ]
+            }
+        ]
+        },
+        {
+        "name": "Art",
+        "code": "ART101",
+        "image": "art.jpg",
+        "assignments": [
+            {
+            "name": "Drawing Challenge",
+            "deadline": "2024-05-08",
+            "time_limit": "3 hours",
+            "total_points": 100,
+            "attempts_allowed": 1,
+            "questions": [
+                {
+                "content": "What is chiaroscuro?",
+                "answer_options": ["A technique in drawing using only white and black", "A type of paintbrush", "A style of architecture", "A musical term"],
+                "correct_answer": "A technique in drawing using only white and black"
+                },
+                {
+                "content": "Who painted the Mona Lisa?",
+                "answer_options": ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Michelangelo"],
+                "correct_answer": "Leonardo da Vinci"
+                },
+                {
+                "content": "What is a still life?",
+                "answer_options": ["A painting of a landscape", "A painting of inanimate objects", "A type of sculpture", "A type of dance"],
+                "correct_answer": "A painting of inanimate objects"
+                },
+                {
+                "content": "What does 'abstract art' emphasize?",
+                "answer_options": ["Realistic representation", "Emotion and imagination", "Historical accuracy", "Geometric shapes"],
+                "correct_answer": "Emotion and imagination"
+                },
+                {
+                "content": "Which art movement focused on irrationality and the subconscious?",
+                "answer_options": ["Cubism", "Surrealism", "Impressionism", "Expressionism"],
+                "correct_answer": "Surrealism"
+                }
+            ]
+            }
+        ]
+        },
+        {
+        "name": "Music",
+        "code": "MUS101",
+        "image": "music.jpg",
+        "assignments": [
+            {
+            "name": "Music Theory Test",
+            "deadline": "2024-05-10",
+            "time_limit": "1 hour",
+            "total_points": 80,
+            "attempts_allowed": 1,
+            "questions": [
+                {
+                "content": "What is the difference between major and minor scales?",
+                "answer_options": ["Major scales are happier sounding, while minor scales are sadder sounding", "Major scales have more notes than minor scales", "Major scales are only used in classical music", "Minor scales are only used in jazz music"],
+                "correct_answer": "Major scales are happier sounding, while minor scales are sadder sounding"
+                },
+                {
+                "content": "What does 'piano' mean in Italian?",
+                "answer_options": ["Soft", "Loud", "Fast", "Slow"],
+                "correct_answer": "Soft"
+                },
+                {
+                "content": "Which composer wrote 'Für Elise'?",
+                "answer_options": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Franz Schubert"],
+                "correct_answer": "Ludwig van Beethoven"
+                },
+                {
+                "content": "What is the standard tuning for a guitar's strings?",
+                "answer_options": ["EADGBE", "EBGDAE", "DADGBE", "GBEADG"],
+                "correct_answer": "EADGBE"
+                },
+                {
+                "content": "What is a crescendo?",
+                "answer_options": ["Gradually getting softer", "A sudden increase in volume", "A gradual increase in volume", "A sudden decrease in volume"],
+                "correct_answer": "A gradual increase in volume"
+                }
+            ]
+            }
+        ]
+        }
+    ]
+}
+  

@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap');
+
+:root {
+    --main-font: Poppins;
+    --title-font: "Playfair Display";
+    --first-color: rgb(3, 143, 3);
+    --second-color: #0c0145;
+    --first-over: rgb(2, 133, 2);
+    --yellow : rgb(240, 176, 37);
+}

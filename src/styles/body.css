@@ -1,0 +1,10 @@
+body {
+    display: flex;
+    margin: 0;
+    font-family: var(--main-font);
+}
+
+h1 {
+    color: var(--first-color);
+    font-family: var(--title-font);
+}

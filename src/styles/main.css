@@ -1,0 +1,114 @@
+#main-page {
+    flex-grow: 1;
+    padding-left: 180px;
+}
+
+.divider {
+    border-bottom: 1px solid rgba(44, 42, 43, 0.5);
+}
+
+/* Account */
+.acc-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.acc-content .main-h1 {
+    grid-column: span 2;
+}
+
+.acc-content .acc-info {
+    width: 50%;
+}
+
+.acc-content .acc-info p {
+    padding: .5rem;
+}
+
+.acc-content .acc-info p strong {
+    color: var(--second-color);
+}
+
+.acc-content .acc-img {
+    padding-top: 2rem;
+    padding-right: 2rem;
+    text-align: right;
+}
+
+/* Course */
+
+#course-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+#course-container .course-card {
+    display: grid;
+    grid-template-rows: 1fr .5fr;
+    margin: 1rem auto;
+    width: 300px;
+    height: 300px;
+    border: .1px solid rgba(44, 42, 43, 0.5);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#course-container .course-card:hover {
+    box-shadow: 2px 2px rgba(44, 42, 43, 0.3);
+}
+
+#course-container .course-card img {
+    grid-row: span 1;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#course-container .course-card p h3, #course-container .course-card p h5 {
+    margin: 0;
+    padding: 0 1rem;
+}
+
+.quiz-page .quiz-month-container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.quiz-page .quiz-month-container h3 {
+    padding: 1rem;
+    background-color: rgba(3, 143, 3, 0.1);
+}
+
+.quiz-page .quiz-month-container .quiz-card {
+    display: grid;
+    grid-template-columns: 2fr 1.25fr 1.25fr .5fr;
+    gap: 1rem;
+    padding: .5rem;
+    align-items: center;
+    border-bottom: 1px solid rgba(43, 142, 43, 0.3);
+}
+
+.quiz-page .quiz-month-container .quiz-card .start_btn {
+    border-width: 0;
+    padding: 8px;
+    background-color: rgba(43, 142, 43, 0.3);
+    border-radius: 5px;
+}
+
+.quiz-page .quiz-month-container .quiz-card .start_btn:hover {
+    background-color: var(--first-over);
+    color: white;
+    cursor: pointer;
+}
+
+.quiz-page .quiz-month-container .quiz-card h4, .quiz-page .quiz-month-container .quiz-card p {
+    margin: 0;
+}
+
+.quiz-page-container .question-container {
+    width: 400px;
+    /* padding: 1rem; */
+    margin: 1rem auto;
+    border: 1px solid rgba(43, 142, 43, 0.3);
+    border-radius: 5px;
+}

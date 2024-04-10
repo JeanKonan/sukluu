@@ -1,0 +1,32 @@
+{
+    "students": [
+      {
+        "name": "John Doe",
+        "student_id": "20240001",
+        "major": "Computer Science",
+        "minor": "Mathematics",
+        "GPA": 3.75,
+        "department": "Engineering",
+        "faculty_mentor": "Dr. Smith"
+      },
+      {
+        "name": "Jane Smith",
+        "student_id": "20240002",
+        "major": "Electrical Engineering",
+        "minor": "Physics",
+        "GPA": 3.85,
+        "department": "Engineering",
+        "faculty_mentor": "Dr. Johnson"
+      },
+      {
+        "name": "Alice Johnson",
+        "student_id": "20240003",
+        "major": "Biology",
+        "minor": null,
+        "GPA": 3.65,
+        "department": "Natural Sciences",
+        "faculty_mentor": "Dr. Brown"
+      }
+    ]
+  }
+  
