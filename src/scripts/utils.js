@@ -470,7 +470,7 @@ async function loadAssignmentsInDashboard() {
     });
 
     const filteredAssignments = filterAssignmentsByCurrentMonth(assignmentsForCurrentMonth);
-    console.log(filteredAssignments)
+    // console.log(filteredAssignments)
     displayAssignmentsInDashboard(filteredAssignments);
   } catch (error) {
     console.error('Error loading and displaying assignments:', error);
@@ -478,8 +478,18 @@ async function loadAssignmentsInDashboard() {
 }
 
 export async function loadAssignments() {
-  const dashboardTemplateFn = loadTemplate("/partials/dashboard.html");
-  const dashboardEl = document.querySelector("#main-page");
-  renderWithTemplate(dashboardTemplateFn, dashboardEl);
-  loadAssignmentsInDashboard();
+  try {
+
+    const dashboardTemplateFn = loadTemplate("/partials/dashboard.html");
+    const dashboardEl = document.querySelector("#main-page");
+    renderWithTemplate(dashboardTemplateFn, dashboardEl);
+
+    loadAssignmentsInDashboard();
+
+  } catch (error) {
+
+    console.error('Error loading dashboard content:', error);
+
+  }
+  
 }
