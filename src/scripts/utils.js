@@ -44,7 +44,6 @@ async function loadAccountInfo() {
       const data = await response.json();
       const students = data.students;
 
-      // Assuming st_id is defined elsewhere
       const student = students.find(student => student.student_id === st_id);
 
       if (student) {
@@ -162,7 +161,6 @@ async function loadCourseQuiz() {
               monthContainer.appendChild(monthTitle);
 
               quizzes.forEach(assignment => {
-                  // const quizCard = createQuizCard(assignment);
                   const quizCard = assignment.score !== "" ? updateQuizCard(assignment) : createQuizCard(assignment);
                   monthContainer.appendChild(quizCard);
               });
@@ -270,7 +268,6 @@ function startQuiz(quiz) {
   const timeLimit = document.createElement('p');
   timeLimit.textContent = `Time Limit: ${quiz.time_limit}`;
 
-  // Append quiz information to the quiz page container
   quizHeader.append(quizTitle, deadline, timeLimit);
   quizPageContainer.appendChild(quizHeader);
   
@@ -304,7 +301,6 @@ function startQuiz(quiz) {
 
       iterator += 1;
       
-      // Append question container to the quiz page container
       quizPageContainer.appendChild(questionContainer);
       
   });
@@ -453,10 +449,6 @@ function displayAssignmentsInDashboard(assignments) {
     });
   }
 
-  // Clear previous content
-  // dashboardContainer.innerHTML = '';
-
-  // Append assignments list to the dashboard container
   dashboardContainer.appendChild(assignmentsListContainer);
 }
 
@@ -486,16 +478,8 @@ async function loadAssignmentsInDashboard() {
 }
 
 export async function loadAssignments() {
-  // header template will still be a function! But one where we have pre-supplied the argument.
-  // headerTemplate and footerTemplate will be almost identical, but they will remember the path we passed in when we created them
-  // why is it important that they stay functions?  The renderWithTemplate function is expecting a template function...if we sent it a string it would break, if we changed it to expect a string then it would become less flexible.
   const dashboardTemplateFn = loadTemplate("/partials/dashboard.html");
   const dashboardEl = document.querySelector("#main-page");
   renderWithTemplate(dashboardTemplateFn, dashboardEl);
   loadAssignmentsInDashboard();
 }
-
-// window.onload = (){
-//   const dashboardContainer = document.querySelector('.dashboard-container');
-//   dashboardContainer.innerHTML = '';
-// }
