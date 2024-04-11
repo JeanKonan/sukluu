@@ -1,3 +1,3 @@
-import { loadHeaderFooter } from './utils';
+import { loadHeader } from './utils';
 
-loadHeaderFooter();
+loadHeader();

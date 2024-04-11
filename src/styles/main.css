@@ -112,3 +112,99 @@
     border: 1px solid rgba(43, 142, 43, 0.3);
     border-radius: 5px;
 }
+
+.quiz-page-container .question-container h3 {
+    padding: .5rem;
+}
+
+.quiz-page-container .question-container .option-container {
+    padding-left: 1rem;
+    margin: 0 auto;
+    border-top: 1px solid rgba(44, 42, 43, 0.3);
+    background-color: rgba(44, 42, 43, 0.02);
+}
+
+.quiz-page-container .question-container .option-container:hover {
+    background-color: rgba(43, 142, 43, 0.3);
+    cursor: pointer;
+}
+
+.quiz-page-container .question-container .option-container input{
+    margin: .5rem;
+    cursor: pointer;
+}
+
+.quiz-page-container .question-container .option-container label {
+    cursor: pointer;
+}
+
+.quiz-page-container .btn-container {
+    text-align: center;
+}
+
+.quiz-page-container .btn-container button {
+    padding: 8px;
+    background-color: var(--first-color);
+    color: white;
+}
+
+.quiz-page-container .btn-container button:hover {
+    background-color: var(--first-over);
+}
+
+/* Dashboard */
+#dashboard {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: .1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+#dashboard h1 {
+    grid-column: span 2;
+    grid-row: 1/2;
+}
+
+#dashboard .stats {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    align-content: center;
+    text-align: center;
+    width: 100%;
+    height: 200px;
+    border: .1px solid rgba(43, 142, 43, 0.3);
+    border-radius: 5px;
+    /* box-shadow: 2px 2px rgba(44, 42, 43, 0.3); */
+}
+
+#dashboard .welcome-msg {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    align-content: center;
+    text-align: center;
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    background-color: rgba(43, 142, 43, 0.3);
+}
+
+#dashboard .stats strong {
+    font-family: var(--title-font);
+    font-size: 50pt;
+    color: var(--first-color);
+}
+
+#dashboard .dashboard-container {
+    grid-row: 2/4;
+    grid-column: 2/3;
+}
+
+#dashboard .assignments-list-container .assignment-item:nth-child(even) {
+    background-color: rgba(43, 142, 43, 0.3);
+}
+
+#dashboard .assignment-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: .5rem;
+}

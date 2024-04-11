@@ -20,7 +20,6 @@ export async function renderWithTemplate(
   }
 
 function loadTemplate(path) {
-    // wait what?  we are returning a new function? this is called currying and can be very helpful.
     return async function () {
       const res = await fetch(path);
       if (res.ok) {
@@ -30,16 +29,10 @@ function loadTemplate(path) {
     };
 }
 
-export async function loadHeaderFooter() {
-    // header template will still be a function! But one where we have pre-supplied the argument.
-    // headerTemplate and footerTemplate will be almost identical, but they will remember the path we passed in when we created them
-    // why is it important that they stay functions?  The renderWithTemplate function is expecting a template function...if we sent it a string it would break, if we changed it to expect a string then it would become less flexible.
+export async function loadHeader() {
     const headerTemplateFn = loadTemplate("/partials/header.html");
-    const footerTemplateFn = loadTemplate("/partials/footer.html");
     const headerEl = document.querySelector("#main-header");
-    const footerEl = document.querySelector("#main-footer");
     renderWithTemplate(headerTemplateFn, headerEl);
-    renderWithTemplate(footerTemplateFn, footerEl);
   }
 
 async function loadAccountInfo() {
@@ -169,7 +162,8 @@ async function loadCourseQuiz() {
               monthContainer.appendChild(monthTitle);
 
               quizzes.forEach(assignment => {
-                  const quizCard = createQuizCard(assignment);
+                  // const quizCard = createQuizCard(assignment);
+                  const quizCard = assignment.score !== "" ? updateQuizCard(assignment) : createQuizCard(assignment);
                   monthContainer.appendChild(quizCard);
               });
 
@@ -228,10 +222,36 @@ function createQuizCard(quiz) {
   return quizCard;
 }
 
+function updateQuizCard(quiz) {
+  const quizCard = document.createElement('div');
+  quizCard.classList.add('quiz-card');
+
+  const quizName = document.createElement('h4');
+  quizName.textContent = quiz.name;
+
+  const deadline = document.createElement('p');
+  deadline.textContent = `Deadline: ${quiz.deadline}`;
+
+  const timeLimit = document.createElement('p');
+  timeLimit.textContent = `Time Limit: ${quiz.time_limit}`;
+
+  const scoreDisplay = document.createElement('p');
+  scoreDisplay.textContent = `Score: ${quiz.score}/${quiz.total_points}`;
+
+  quizCard.appendChild(quizName);
+  quizCard.appendChild(deadline);
+  quizCard.appendChild(timeLimit);
+  quizCard.appendChild(scoreDisplay);
+
+  return quizCard;
+}
+
+
 function startQuiz(quiz) {
   // Hide the quiz card container
   const quizCardContainer = document.querySelector('.quiz-page');
   quizCardContainer.style.display = 'none';
+  quizCardContainer.innerHTML = '';
 
   // Create the quiz page container
   const quizPageContainer = document.querySelector('.quiz-page-container');
@@ -253,6 +273,8 @@ function startQuiz(quiz) {
   // Append quiz information to the quiz page container
   quizHeader.append(quizTitle, deadline, timeLimit);
   quizPageContainer.appendChild(quizHeader);
+  
+  let iterator = 1;
 
   // Iterate over the questions in the quiz
   quiz.questions.forEach((question, index) => {
@@ -262,22 +284,218 @@ function startQuiz(quiz) {
 
       const questionTitle = document.createElement('h3');
       questionTitle.textContent = `Question ${index + 1}: ${question.content}`;
-
-      const optionsList = document.createElement('ul');
+      questionContainer.appendChild(questionTitle);
 
       // Iterate over the answer options for the question
       question.answer_options.forEach(option => {
-          const optionItem = document.createElement('li');
-          optionItem.textContent = option;
-          optionsList.appendChild(optionItem);
+          const optionContainer = document.createElement('p');
+          optionContainer.classList.add('option-container');
+
+          const optionItem = document.createElement('input');
+          const optionLabel = document.createElement('label');
+          optionLabel.textContent = option;
+          optionItem.type = 'radio';
+          optionItem.name = `question${iterator}_answers`;
+          optionItem.value = option;
+          optionContainer.appendChild(optionItem);
+          optionContainer.appendChild(optionLabel);
+          questionContainer.appendChild(optionContainer);
       });
 
-      // Append question elements to the question container
-      questionContainer.appendChild(questionTitle);
-      questionContainer.appendChild(optionsList);
-
+      iterator += 1;
+      
       // Append question container to the quiz page container
       quizPageContainer.appendChild(questionContainer);
+      
   });
 
+  const btn_container = document.createElement('p');
+  btn_container.classList.add('btn-container');
+
+  const submit_btn = document.createElement('button');
+  submit_btn.classList.add('submit-btn');
+  submit_btn.textContent = "Submit Quiz";
+
+  submit_btn.addEventListener('click', () => {
+    const score = calculateScore(quiz);
+    updateScoreInJSON(quiz, score);
+    // Show the quiz card container again after submitting the quiz
+    quizCardContainer.style.display = 'block';
+    // Clear the quiz page container
+    quizPageContainer.innerHTML = '';
+  });
+
+  btn_container.appendChild(submit_btn);
+  quizPageContainer.appendChild(btn_container);
+
 }
+
+
+function calculateScore(quiz) {
+  let score = 0;
+
+  // Iterate over the questions in the quiz
+  quiz.questions.forEach(question => {
+      // Find the selected answer for the question
+      const selectedOption = document.querySelector(`input[name="${question.content}"]:checked`);
+
+      // If an answer is selected and it matches the correct answer, increment the score
+      if (selectedOption && selectedOption.value === question.correct_answer) {
+          score += 4;
+      }
+  });
+
+  return score;
+}
+
+function displayScore(score, container) {
+  // Create an element to display the score
+  const scoreElement = document.createElement('p');
+  scoreElement.textContent = `Score: ${score}`;
+
+  // Append the score element to the container
+  container.appendChild(scoreElement);
+}
+
+async function updateScoreInJSON(quiz, score) {
+  const file_url = `${url_root}/data.json`;
+
+  try {
+    const response = await fetch(file_url);
+    const data = await response.json();
+    const courses = data.courses;
+
+    // Find the course and quiz in the JSON data
+    const courseIndex = courses.findIndex(course => course.name === current_course);
+    if (courseIndex !== -1) {
+      const assignmentIndex = courses[courseIndex].assignments.findIndex(assignment => assignment.name === quiz.name);
+      if (assignmentIndex !== -1) {
+        // Update the score for the quiz
+        courses[courseIndex].assignments[assignmentIndex].score = score.toString();
+
+        // Write the updated JSON data back to the file
+        const jsonData = JSON.stringify(data, null, 2);
+        const updatedResponse = await fetch(file_url, {
+          method: 'PUT',
+          body: jsonData,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+
+        if (updatedResponse.ok) {
+          console.log('Score updated successfully in the JSON file.');
+          // Reload the course quizzes with the updated score
+          loadCourseQuiz();
+        } else {
+          console.error('Failed to update score in the JSON file.');
+        }
+      } else {
+        console.error('Assignment not found in the JSON data.');
+      }
+    } else {
+      console.error('Course not found in the JSON data.');
+    }
+  } catch (error) {
+    console.error('Error updating score in the JSON file:', error);
+  }
+}
+
+function getCurrentMonth() {
+  const currentDate = new Date();
+  const monthYear = currentDate.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+  return monthYear;
+}
+
+// Function to filter assignments by current month
+function filterAssignmentsByCurrentMonth(assignments) {
+  const currentMonth = getCurrentMonth();
+  const assignmentsForCurrentMonth = assignments.filter(assignment => {
+    const deadlineDate = new Date(assignment.deadline);
+    const monthYear = deadlineDate.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+    return monthYear === currentMonth;
+  });
+  return assignmentsForCurrentMonth;
+}
+
+// Function to display assignments in the dashboard
+function displayAssignmentsInDashboard(assignments) {
+  const dashboardContainer = document.querySelector('.dashboard-container');
+  const stats = document.querySelector('.stats');
+  stats.innerHTML = `<strong>${assignments.length}</strong> <br> still remaining`;
+  const assignmentsListContainer = document.createElement('div');
+  assignmentsListContainer.classList.add('assignments-list-container');
+
+  const currentMonth = getCurrentMonth();
+  const heading = document.createElement('h3');
+  heading.textContent = `Assignments for ${currentMonth}`;
+  assignmentsListContainer.appendChild(heading);
+
+  if (assignments.length === 0) {
+    const noAssignmentsMessage = document.createElement('p');
+    noAssignmentsMessage.textContent = 'No assignments for this month.';
+    assignmentsListContainer.appendChild(noAssignmentsMessage);
+  } else {
+    assignments.forEach(assignment => {
+      const assignmentItem = document.createElement('div');
+      assignmentItem.classList.add('assignment-item');
+
+      const assignmentName = document.createElement('p');
+      assignmentName.textContent = assignment.name;
+
+      const assignmentDeadline = document.createElement('p');
+      assignmentDeadline.textContent = `Deadline: ${assignment.deadline}`;
+
+      assignmentItem.appendChild(assignmentName);
+      assignmentItem.appendChild(assignmentDeadline);
+
+      assignmentsListContainer.appendChild(assignmentItem);
+    });
+  }
+
+  // Clear previous content
+  // dashboardContainer.innerHTML = '';
+
+  // Append assignments list to the dashboard container
+  dashboardContainer.appendChild(assignmentsListContainer);
+}
+
+// Function to load and display assignments in the dashboard
+async function loadAssignmentsInDashboard() {
+  const file_url = `${url_root}/data.json`;
+
+  try {
+    const response = await fetch(file_url);
+    const data = await response.json();
+    const courses = data.courses;
+
+    // Find assignments for the current month
+    const assignmentsForCurrentMonth = [];
+    courses.forEach(course => {
+      course.assignments.forEach(assignment => {
+        assignmentsForCurrentMonth.push(assignment);
+      });
+    });
+
+    const filteredAssignments = filterAssignmentsByCurrentMonth(assignmentsForCurrentMonth);
+    console.log(filteredAssignments)
+    displayAssignmentsInDashboard(filteredAssignments);
+  } catch (error) {
+    console.error('Error loading and displaying assignments:', error);
+  }
+}
+
+export async function loadAssignments() {
+  // header template will still be a function! But one where we have pre-supplied the argument.
+  // headerTemplate and footerTemplate will be almost identical, but they will remember the path we passed in when we created them
+  // why is it important that they stay functions?  The renderWithTemplate function is expecting a template function...if we sent it a string it would break, if we changed it to expect a string then it would become less flexible.
+  const dashboardTemplateFn = loadTemplate("/partials/dashboard.html");
+  const dashboardEl = document.querySelector("#main-page");
+  renderWithTemplate(dashboardTemplateFn, dashboardEl);
+  loadAssignmentsInDashboard();
+}
+
+// window.onload = (){
+//   const dashboardContainer = document.querySelector('.dashboard-container');
+//   dashboardContainer.innerHTML = '';
+// }

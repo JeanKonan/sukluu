@@ -9,8 +9,8 @@
                 "name": "Comprehension Exercise",
                 "deadline": "2024-04-15",
                 "time_limit": "1 hour",
-                "total_points": 50,
-                "attempts_allowed": 2,
+                "total_points": 20,
+                "score": "15",
                 "questions": [
                 {
                     "content": "What is the capital of France?",
@@ -43,8 +43,8 @@
                 "name": "Conjugation Exercise",
                 "deadline": "2024-04-24",
                 "time_limit": "30 minutes",
-                "total_points": 45,
-                "attempts_allowed": 2,
+                "total_points": 20,
+                "score": "",
                 "questions": [
                 {
                     "content": "What is the capital of France?",
@@ -84,8 +84,8 @@
                 "name": "Algebra Quiz",
                 "deadline": "2024-04-20",
                 "time_limit": "45 minutes",
-                "total_points": 40,
-                "attempts_allowed": 1,
+                "total_points": 20,
+                "score": "",
                 "questions": [
                 {
                     "content": "Solve for x: 2x + 5 = 15",
@@ -125,8 +125,8 @@
             "name": "World History Quiz",
             "deadline": "2024-04-18",
             "time_limit": "50 minutes",
-            "total_points": 60,
-            "attempts_allowed": 1,
+            "total_points": 20,
+            "score": "",
             "questions": [
                 {
                 "content": "Who was the first president of the United States?",
@@ -166,8 +166,8 @@
             "name": "Ethical Dilemmas",
             "deadline": "2024-04-22",
             "time_limit": "1 hour",
-            "total_points": 70,
-            "attempts_allowed": 2,
+            "total_points": 20,
+            "score": "",
             "questions": [
                 {
                 "content": "Is it ever justified to tell a lie?",
@@ -207,8 +207,8 @@
             "name": "Vocabulary Test",
             "deadline": "2024-04-25",
             "time_limit": "40 minutes",
-            "total_points": 50,
-            "attempts_allowed": 1,
+            "total_points": 20,
+            "score": "",
             "questions": [
                 {
                 "content": "Translate 'book' to Spanish.",
@@ -248,8 +248,8 @@
             "name": "Biology Quiz",
             "deadline": "2024-04-28",
             "time_limit": "50 minutes",
-            "total_points": 60,
-            "attempts_allowed": 1,
+            "total_points": 20,
+            "score": "",
             "questions": [
                 {
                 "content": "What is the powerhouse of the cell?",
@@ -289,8 +289,8 @@
             "name": "Physics Experiment",
             "deadline": "2024-04-30",
             "time_limit": "1 hour",
-            "total_points": 70,
-            "attempts_allowed": 2,
+            "total_points": 20,
+            "score": "",
             "questions": [
                 {
                 "content": "What is Newton's first law of motion?",
@@ -330,8 +330,8 @@
             "name": "Coding Challenge",
             "deadline": "2024-05-02",
             "time_limit": "2 hours",
-            "total_points": 80,
-            "attempts_allowed": 1,
+            "total_points": 20,
+            "score": "",
             "questions": [
                 {
                 "content": "What does HTML stand for?",
@@ -371,8 +371,8 @@
             "name": "Fitness Challenge",
             "deadline": "2024-05-05",
             "time_limit": "2 hours",
-            "total_points": 90,
-            "attempts_allowed": 2,
+            "total_points": 20,
+            "score": "",
             "questions": [
                 {
                 "content": "What is the purpose of stretching before exercise?",
@@ -412,8 +412,8 @@
             "name": "Drawing Challenge",
             "deadline": "2024-05-08",
             "time_limit": "3 hours",
-            "total_points": 100,
-            "attempts_allowed": 1,
+            "total_points": 20,
+            "score": "",
             "questions": [
                 {
                 "content": "What is chiaroscuro?",
@@ -453,8 +453,8 @@
             "name": "Music Theory Test",
             "deadline": "2024-05-10",
             "time_limit": "1 hour",
-            "total_points": 80,
-            "attempts_allowed": 1,
+            "total_points": 20,
+            "score": "",
             "questions": [
                 {
                 "content": "What is the difference between major and minor scales?",
